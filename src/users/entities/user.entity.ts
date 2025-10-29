@@ -5,8 +5,11 @@ import {
   UpdateDateColumn,
   Entity,
   Unique,
+  OneToMany,
 } from "typeorm";
 import { Exclude } from "class-transformer";
+import { Subscription } from "../../subscriptions/entities/subscription.entity";
+import { Payment } from "../../payments/entities/payment.entity";
 
 @Entity({ name: "users" })
 @Unique(["email"])
@@ -27,7 +30,7 @@ export class User {
   @Column({ type: "boolean", nullable: true, default: false })
   is_email_verified: boolean | null;
 
-  @Column({type: "varchar"})
+  @Column({ type: "varchar" })
   refresh_token: string | null;
 
   @CreateDateColumn({ type: "timestamptz" })
@@ -35,4 +38,10 @@ export class User {
 
   @UpdateDateColumn({ type: "timestamptz" })
   updated_at: Date;
+
+  @OneToMany(() => Subscription, (subscription) => subscription.user)
+  subscriptions: Subscription[];
+
+  @OneToMany(() => Payment, (payment) => payment.user)
+  payments: Payment[];
 }
