@@ -5,7 +5,7 @@ import {
   ForbiddenException,
 } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
-import { ROLES_KEY, UserRole } from "../../../app.constants";
+import { ROLES_KEY, UserRole } from "../../app.constants";
 
 @Injectable()
 export class RolesGuard implements CanActivate {
