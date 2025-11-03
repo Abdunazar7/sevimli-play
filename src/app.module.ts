@@ -15,6 +15,13 @@ import { TagsModule } from './tags/tags.module';
 import { ContentTagsModule } from './content_tags/content_tags.module';
 import { CategoriesModule } from './categories/categories.module';
 import { ContentCategoriesModule } from './content_categories/content_categories.module';
+import { PeopleModule } from './people/people.module';
+import { ContentPeopleModule } from './content_people/content_people.module';
+import { ThumbnailsModule } from './thumbnails/thumbnails.module';
+import { MediaFilesModule } from './media-files/media-files.module';
+import { EpisodesModule } from './episodes/episodes.module';
+import { CommentsModule } from './comments/comments.module';
+import { WatchHistoriesModule } from './watch-histories/watch-histories.module';
 
 @Module({
   imports: [
@@ -62,6 +69,20 @@ import { ContentCategoriesModule } from './content_categories/content_categories
     CategoriesModule,
 
     ContentCategoriesModule,
+
+    PeopleModule,
+
+    ContentPeopleModule,
+
+    ThumbnailsModule,
+
+    MediaFilesModule,
+
+    EpisodesModule,
+
+    CommentsModule,
+
+    WatchHistoriesModule,
   ],
 })
 export class AppModule {}

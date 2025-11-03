@@ -90,7 +90,7 @@ export enum ContentType {
 }
 
 // CONTENT PEOPLE ROLE
-export enum PersonRole {
+export enum ContentRole {
   ACTOR = "actor",
   DIRECTOR = "director",
   PRODUCER = "producer",

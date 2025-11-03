@@ -13,6 +13,8 @@ import { Language, MaturityLevel } from "../../app.constants";
 import { BlobOptions } from "buffer";
 import { Device } from "../../devices/entities/device.entity";
 import { Rating } from "../../ratings/entities/rating.entity";
+import { Comment } from "../../comments/entities/comment.entity";
+import { WatchHistory } from "../../watch-histories/entities/watch-history.entity";
 
 @Entity("profiles")
 export class Profile {
@@ -53,4 +55,10 @@ export class Profile {
 
   @OneToMany(() => Rating, (rating) => rating.profile)
   ratings: Rating[];
+
+  @OneToMany(() => Comment, (comment) => comment.profile)
+  comments: Comment[];
+
+  @OneToMany(() => WatchHistory, (history) => history.profile)
+  watch_histories: WatchHistory[];
 }
